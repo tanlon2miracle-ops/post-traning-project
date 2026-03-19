@@ -14,6 +14,7 @@
   - **要求**：必须覆盖我们定义的 5 个一级标签（色情低俗、欺诈违规、违禁内容、平台违规、正常）。
   - **交付动作**：在 `01-ops-workspace/sample_data/` 目录下提交 `samples_v1.jsonl`，确保敏感信息已脱敏。
   - **已交付**：`01-ops-workspace/sample_data/samples_v1.jsonl`（15 条，覆盖 5 个一级标签，包含图文字段占位与脱敏文本）
+  - **补充说明**：`01-ops-workspace/sample_data/sample_images/` 中的图片为仓库内加载测试 fixture，仅用于路径存在性校验、多模态 loader 冒烟测试与 JSONL 贯通验证，不作为图像语义评测样本；详细约束见 `01-ops-workspace/sample_data/README.md`。
   
 - [x] **行动 2：核心规则结构化 (2-3条)**
   - 挑选 2-3 条最核心或最复杂的风控规则。
