@@ -86,6 +86,7 @@ post-traning-project/
 
 ## 快速导航
 
+- **⭐ 任务认领与提交 SOP** → [docs/workflow-sop.md](docs/workflow-sop.md) ← 新人必读
 - **项目进度** → [docs/roadmap.md](docs/roadmap.md)
 - **技术决策** → [docs/decisions.md](docs/decisions.md)
 - **标签体系** → [docs/label-taxonomy.md](docs/label-taxonomy.md)
