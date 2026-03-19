@@ -42,31 +42,47 @@
 
 ```
 post-traning-project/
-├── README.md                 # 本文件
-├── docs/
-│   ├── roadmap.md            # Roadmap & 进度追踪
-│   ├── decisions.md          # 已确定的技术决策
-│   ├── label-taxonomy.md     # 标签体系设计
-│   ├── data-synthesis.md     # 数据合成方案 & prompt 模板
-│   └── tech-stack.md         # 技术栈选型 & 对比
-├── scripts/
-│   ├── synthesize/           # 数据合成脚本
-│   ├── clean/                # 数据清洗脚本
-│   ├── format/               # 格式转换脚本
-│   └── evaluate/             # 评测脚本
-├── configs/
-│   ├── sft_qwen25vl_7b.yaml  # SFT 训练配置
-│   ├── dpo_qwen25vl_7b.yaml  # DPO 训练配置
-│   └── data_juicer.yaml      # Data-Juicer 清洗配置
-├── data/                     # .gitignore，不入库
-│   ├── raw/                  # 原始人审数据
-│   ├── cleaned/              # 清洗后数据
-│   ├── synthetic/            # 合成数据
-│   ├── opensource/            # 开源数据集
-│   └── formatted/            # 最终训练格式
-└── eval/
-    └── test_set/             # 评测集
+├── README.md
+├── docs/                         # 📖 架构、决策、Roadmap（所有人可读，PM 维护）
+│   ├── roadmap.md                #   进度追踪 & TODO
+│   ├── decisions.md              #   技术决策记录
+│   ├── label-taxonomy.md         #   标签体系设计
+│   ├── data-synthesis.md         #   数据合成方案 & Prompt 模板
+│   └── tech-stack.md             #   技术栈选型对比
+│
+├── tasks/                        # 📍 任务分发与追踪中心
+│   ├── 01-ops-tasks/             #   运营/策略组任务打卡区
+│   ├── 02-dev-tasks/             #   开发/工程组任务打卡区
+│   └── 03-algo-tasks/            #   算法/大模型组任务打卡区
+│
+├── 01-ops-workspace/             # 🟢 运营/风控同学的主阵地
+│   ├── rules/                    #   结构化规则库（JSON/YAML），供程序读取
+│   ├── sample_data/              #   极少量严格脱敏样例数据（供开发调试）
+│   └── taxonomy_updates/         #   标签体系变更提案区
+│
+├── 02-dev-workspace/             # 🔵 开发/工程同学的主阵地
+│   ├── envs/                     #   H20 集群环境配置、Dockerfile、requirements
+│   ├── data_pipeline/            #   数据清洗(Data-Juicer)、格式转换、标签映射脚本
+│   └── deployment/               #   vLLM 推理部署脚本、压测工具
+│
+├── 03-algo-workspace/            # 🟣 算法同学的主阵地
+│   ├── synthesis/                #   Distilabel 数据合成逻辑、Prompt 模板调试
+│   ├── eval/                     #   自研风控评测脚本、lm-eval 适配代码
+│   └── configs/                  #   LLaMA-Factory / veRL 的 yaml 训练参数
+│
+├── data/                         # 🔴 .gitignore 忽略！真实数据不入库
+└── checkpoints/                  # 🔴 .gitignore 忽略！模型权重不入库
 ```
+
+### 各工作区职责
+
+| 工作区 | 角色 | 核心产出 |
+|--------|------|---------|
+| `docs/` | 全员 / PM | 架构文档、决策记录、进度追踪 |
+| `tasks/` | 全员 | 任务分发、打卡、进度同步 |
+| `01-ops-workspace/` | 运营/策略 | 结构化规则、脱敏样例、标签提案 |
+| `02-dev-workspace/` | 开发/工程 | 环境配置、数据管道、部署脚本 |
+| `03-algo-workspace/` | 算法 | 合成逻辑、评测脚本、训练配置 |
 
 ## 快速导航
 

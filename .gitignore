@@ -1,17 +1,21 @@
-# data/ is not tracked - contains sensitive training data
+# data/ - 真实数据，严格不入库
 data/
 
-# Model checkpoints
+# checkpoints/ - 模型权重，严格不入库
 checkpoints/
+
+# Model files
 *.pt
 *.bin
 *.safetensors
+*.gguf
 
 # Python
 __pycache__/
 *.pyc
 .venv/
 *.egg-info/
+dist/
 
 # OS
 .DS_Store
@@ -21,3 +25,4 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+*.swo
