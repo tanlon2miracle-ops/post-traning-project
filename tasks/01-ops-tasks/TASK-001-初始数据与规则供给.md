@@ -1,7 +1,7 @@
 # TASK-001: 初始样例数据提取与规则结构化
 
 > **状态 (Status)**: 🚧 进行中 (WIP)
-> **认领人 (Assignee)**: @零爪
+> **认领人 (Assignee)**: @duobao
 > **关联文档**: `docs/label-taxonomy.md`, `docs/roadmap.md`
 
 ## 🎯 任务背景
